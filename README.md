@@ -8,6 +8,7 @@ I only spent a couple hours on this so here's what I would do in a real app:
 
 Tested on node 16.10.0
 
+- npm install
 - npm run start
 
 Run tests with:
