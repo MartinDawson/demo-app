@@ -1,0 +1,25 @@
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--formSpacing);
+  margin-bottom: var(--formSpacing);
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--formSpacing);
+}
+
+.addInput {
+  display: block;
+  margin-bottom: var(--formSpacing);
+  margin-left: auto;
+}
+
+.submit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--formSpacing);
+}

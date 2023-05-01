@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+import Form from './Form/Form';
+import Page from './Pages/Page';
+import Success from './Pages/Success';
+
+export const successRoute = '/success';
 
 function App() {
+  // Check if window exists due to SSR/SSG
+  const showSuccessPage = typeof window !== 'undefined' && window.location.pathname === successRoute
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className={styles.app}>
+      {showSuccessPage ? (
+        <Success />
+      ) : (
+        <Page>
+          <div className={styles.formContainer}>
+            <h1>Form Inputs</h1>
+            <Form addInputNode="+" submitNode="Submit" />
+          </div>
+        </Page>
+      )}
+    </div >
   );
 }
 
